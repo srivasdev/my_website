@@ -1,0 +1,652 @@
+
+:root {
+    --bg: #f5f3ed;
+    --dark: #242720;
+    --green: #747d65;
+    --muted: #85867d;
+    --white: #ffffff;
+    --line: #deddd4;
+    --serif: 'Playfair Display', serif;
+    --sans: 'DM Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--dark);
+    font-family: var(--sans);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.loader {
+    position: fixed;
+    inset: 0;
+    background: var(--dark);
+    color: var(--bg);
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    font-family: var(--serif);
+    font-size: 40px;
+    transition: opacity .7s, visibility .7s;
+}
+
+.loader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+header {
+    padding: 0 8%;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(245,243,237,.95);
+    backdrop-filter: blur(12px);
+}
+
+.navbar {
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.nav-links {
+    display: flex;
+    gap: 38px;
+}
+
+.nav-links a,
+.nav-contact {
+    font-size: 13px;
+    transition: color .3s;
+}
+
+.nav-links a:hover,
+.nav-contact:hover {
+    color: var(--green);
+}
+
+.nav-contact {
+    border-bottom: 1px solid var(--dark);
+    padding-bottom: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 720px;
+    padding: 90px 8% 70px;
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+}
+
+.eyebrow,
+.section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(55px, 7vw, 100px);
+    font-weight: 500;
+    line-height: 1.08;
+    margin: 35px 0 25px;
+}
+
+h1 span,
+h2 span {
+    color: var(--green);
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 370px;
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--dark);
+    color: white;
+    padding: 17px 25px;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    background: var(--green);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    font-size: 12px;
+    border-bottom: 1px solid var(--dark);
+    padding-bottom: 5px;
+}
+
+.hero-image {
+    height: 490px;
+    position: relative;
+}
+
+.hero-image img {
+    height: 100%;
+    filter: saturate(.7);
+}
+
+.image-caption {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 13px;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 8%;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.section-padding {
+    padding: 120px 8%;
+}
+
+.about {
+    background: #eae9e1;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    margin-top: 60px;
+}
+
+h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.2;
+}
+
+.about-text p {
+    font-size: 14px;
+    line-height: 2;
+    color: #73746c;
+    margin-bottom: 20px;
+}
+
+.about-text .signature {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-style: italic;
+    color: var(--green);
+    margin-top: 30px;
+}
+
+.stats {
+    border-top: 1px solid #d4d3cb;
+    margin-top: 70px;
+    padding-top: 35px;
+    display: flex;
+    gap: 100px;
+}
+
+.stats h3 {
+    font-family: var(--serif);
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.stats p {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.section-heading {
+    margin: 40px 0;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.section-heading p {
+    font-size: 12px;
+    color: var(--muted);
+    max-width: 240px;
+    line-height: 1.8;
+}
+
+.travel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 290px;
+    gap: 15px;
+}
+
+.travel-card {
+    position: relative;
+    overflow: hidden;
+    background: #777;
+}
+
+.travel-card.large-card {
+    grid-row: span 2;
+}
+
+.travel-card img {
+    height: 100%;
+    transition: transform .7s;
+    filter: brightness(.78);
+}
+
+.travel-card:hover img {
+    transform: scale(1.07);
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    padding: 30px;
+    color: white;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,.75));
+}
+
+.card-overlay span {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.card-overlay h3 {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 500;
+    margin: 8px 0;
+}
+
+.card-overlay p {
+    font-size: 11px;
+    color: #e3e3e3;
+}
+
+.garage {
+    background: #e9e8df;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 55px;
+}
+
+.car-image {
+    height: 310px;
+    position: relative;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.car-image img {
+    height: 100%;
+    transition: .6s;
+}
+
+.car-card:hover img {
+    transform: scale(1.05);
+}
+
+.car-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255,255,255,.85);
+    padding: 9px 13px;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.car-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+}
+
+.car-info h3 {
+    font-family: var(--serif);
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.car-info p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+.car-tag {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--green);
+}
+
+.poetry-intro {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+    align-items: center;
+}
+
+.poetry-intro p {
+    color: var(--muted);
+    max-width: 350px;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-top: 20px;
+}
+
+.poetry-symbol {
+    font-family: var(--serif);
+    color: var(--green);
+    font-size: 170px;
+    line-height: .5;
+}
+
+.poem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.poem-card {
+    padding: 50px;
+    background: #e8e7de;
+    min-height: 330px;
+}
+
+.dark-poem {
+    background: var(--dark);
+    color: white;
+}
+
+.poem-date {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--green);
+}
+
+.poem-card h3 {
+    font-family: var(--serif);
+    font-size: 29px;
+    font-weight: 500;
+    margin: 35px 0 20px;
+}
+
+.poem-card p {
+    font-family: var(--serif);
+    font-style: italic;
+    line-height: 2;
+    font-size: 16px;
+}
+
+.poem-footer {
+    display: block;
+    margin-top: 30px;
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.poetry-note {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 20px;
+}
+
+.dreams {
+    background: #eae9e1;
+}
+
+.dreams h2 {
+    margin: 50px 0;
+}
+
+.dream-list {
+    border-top: 1px solid #d4d3cb;
+}
+
+.dream-list p {
+    padding: 20px 0;
+    border-bottom: 1px solid #d4d3cb;
+    font-size: 14px;
+    color: #62645b;
+}
+
+.contact {
+    text-align: center;
+    padding-top: 140px;
+    padding-bottom: 120px;
+}
+
+.contact h2 {
+    margin: 40px 0;
+}
+
+.contact-small {
+    margin-top: 65px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+footer {
+    padding: 35px 8%;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer p,
+footer > a:last-child {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+footer > a:last-child {
+    letter-spacing: 1px;
+}
+
+@media(max-width: 850px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 65px;
+    }
+
+    .hero-image {
+        height: 400px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .travel-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .travel-card.large-card {
+        grid-row: auto;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading p {
+        margin-top: 15px;
+    }
+}
+
+@media(max-width: 600px) {
+    header {
+        padding: 0 6%;
+    }
+
+    .navbar {
+        height: 70px;
+    }
+
+    .nav-contact {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 30px;
+        background: var(--bg);
+        flex-direction: column;
+        gap: 25px;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        padding: 70px 6%;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .hero-image {
+        height: 320px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+    .section-padding {
+        padding: 80px 6%;
+    }
+
+    .stats {
+        gap: 25px;
+        justify-content: space-between;
+    }
+
+    .stats h3 {
+        font-size: 30px;
+    }
+
+    .travel-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 300px;
+    }
+
+    .car-grid,
+    .poem-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .car-image {
+        height: 240px;
+    }
+
+    .car-info {
+        gap: 10px;
+    }
+
+    .car-info h3 {
+        font-size: 21px;
+    }
+
+    .poem-card {
+        padding: 35px 25px;
+    }
+
+    .poetry-symbol {
+        font-size: 90px;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    footer p {
+        order: 3;
+        width: 100%;
+    }
+}
